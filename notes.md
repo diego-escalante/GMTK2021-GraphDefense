@@ -4,9 +4,6 @@
 
 ### Core
 
-1. Power Sites
-    * Randomly placed
-    * Capacity
 2. Generators
     * Extraction rate
 3. Wires
@@ -19,3 +16,4 @@
 6. Enemies
     * Move to nearest building
     * Attack building
+7. Generate Power Site locations
