@@ -19,10 +19,6 @@ public class EnergyDeposit : MonoBehaviour, IStorage {
         spriteRenderer.color = Color.Lerp(emptyColor, fullColor, storage/capacity);
     }
 
-    private void Update() {
-        UpdateStorage(-10 * Time.deltaTime);
-    }
-
     public void UpdateStorage(float delta) {
         storage += delta;
         if (storage < 0) {
