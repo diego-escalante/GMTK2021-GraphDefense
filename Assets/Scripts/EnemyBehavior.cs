@@ -67,7 +67,7 @@ public class EnemyBehavior : MonoBehaviour {
 
     private IEnumerator RefreshTarget() {
         PickTarget();
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
         StartCoroutine(RefreshTarget());
     }
 

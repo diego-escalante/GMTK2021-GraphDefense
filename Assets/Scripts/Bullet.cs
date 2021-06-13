@@ -8,7 +8,12 @@ public class Bullet : MonoBehaviour {
     public float speed = 10f;
     public LayerMask enemyLayer;
 
+    private static ScoreTracker scoreTracker;
+
     private void Start() {
+        if (scoreTracker == null) {
+            scoreTracker = GameObject.FindWithTag("GameController").GetComponent<ScoreTracker>();
+        }
         Destroy(gameObject, ttl);
     }
 
@@ -19,6 +24,7 @@ public class Bullet : MonoBehaviour {
         if (coll != null) {
             Destroy(coll.gameObject);
             Destroy(gameObject);
+            scoreTracker.IncreaseScore();
         }
     }
 

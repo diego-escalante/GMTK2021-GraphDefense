@@ -96,8 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b2a7a7844a41c4d8e26c7f8ba287d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  capacity: 100
-  storage: 100
+  energy: 100
   fullColor: {r: 0.6320754, g: 0.6320754, b: 0, a: 1}
   emptyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!58 &4525705947476688405

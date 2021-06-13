@@ -115,7 +115,7 @@ MonoBehaviour:
   energyPerShot: 1
   range: 5
   bulletPrefab: {fileID: 644934350307733133, guid: ca9835cbb8a0cc645a64f09a462d5a45, type: 3}
-  shotInterval: 0.3
+  shotInterval: 0.5
 --- !u!58 &8868470822263213196
 CircleCollider2D:
   m_ObjectHideFlags: 0
