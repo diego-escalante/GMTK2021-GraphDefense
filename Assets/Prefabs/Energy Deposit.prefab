@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5742563376586763162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 0.9356344, g: 0.9356344, b: 0.064365625, a: 1}
+  m_Color: {r: 0.6313726, g: 0.6313726, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capacity: 100
   storage: 100
-  fullColor: {r: 1, g: 1, b: 0, a: 1}
+  fullColor: {r: 0.6320754, g: 0.6320754, b: 0, a: 1}
   emptyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!58 &4525705947476688405
 CircleCollider2D:

@@ -4,16 +4,12 @@
 
 ### Core
 
-2. Generators
-    * Extraction rate
-3. Wires
-    * Length
-    * Throughput
-4. Build Sites
-    * Energy cost to build
-5. Towers
+* Wires - remove wires
+* Build Sites - Create build site
+* Towers
     * Consumption rate (energy to attack)
-6. Enemies
+* Enemies
+    * Spawning
     * Move to nearest building
     * Attack building
-7. Generate Power Site locations
+* Generate Power Site locations
