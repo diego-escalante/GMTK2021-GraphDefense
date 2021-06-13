@@ -4,7 +4,6 @@
 
 ### Core
 
-* Build Sites - Create build site
 * Towers
     * Consumption rate (energy to attack)
 * Enemies

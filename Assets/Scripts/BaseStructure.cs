@@ -32,7 +32,7 @@ public abstract class BaseStructure : MonoBehaviour {
 
     [Header("Build")]
     [SerializeField]
-    protected bool isBuilt = false;
+    public bool isBuilt = false;
     [SerializeField]
     private float totalBuildEnergy = 10f;
     [SerializeField]
@@ -263,7 +263,7 @@ public abstract class BaseStructure : MonoBehaviour {
             buildingSprite.sprite = spriteRenderer.sprite;
             buildingSprite.color = new Color(0.25f, 0.25f, 0.25f);
             buildMaskTrans = transform.Find("Building/Mask");
-            currentHealth = 0.1f;
+            currentHealth = 0.001f;
         }
 
         float energyToSpend = buildingRate * Time.deltaTime;

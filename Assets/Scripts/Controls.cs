@@ -14,10 +14,13 @@ public class Controls : MonoBehaviour {
     private BaseStructure selected, highlighted;
     private WireDrawer wireDrawer;
 
+    private BuilderControls builderControls;
+
     private void Awake() {
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         lineRenderer = GetComponent<LineRenderer>();
         wireDrawer = GetComponent<WireDrawer>();
+        builderControls = GetComponent<BuilderControls>();
     }
 
     private void Update() {
@@ -92,42 +95,7 @@ public class Controls : MonoBehaviour {
             }
         }
 
-        // if (coll != null) {
-        //     if (Input.GetMouseButtonDown((int)MouseButton.left)) {
-        //         // Clicking on something.
-        //         if (selected != null) {
-        //             // Deselect anything currently selected.
-        //             selected.Deselect();
-        //             selected.ConnectTo(coll.GetComponent<BaseStructure>());
-        //             selected = null;
-        //             lineRenderer.positionCount = 0;
-        //         } else {
-        //             // Select the new structure.
-        //             highlighted = null;
-        //             selected = coll.GetComponent<BaseStructure>();
-        //             selected.Select();
-        //             lineRenderer.positionCount = 2;
-        //             Vector3[] positions = {new Vector3(selected.transform.position.x, selected.transform.position.y, 0.02f), mousePos};
-        //             lineRenderer.SetPositions(positions);
-        //         }
-        //     } else {
-        //         // Mousing over something.
-        //         BaseStructure currentStructure = coll.GetComponent<BaseStructure>();
-        //         if (selected != currentStructure) {
-        //             if (highlighted != null) {
-        //                 highlighted.GetComponent<BaseStructure>().Deselect();
-        //             }
-        //             currentStructure.Highlight();
-        //             highlighted = coll;
-        //         }
-        //     }
-        // } else {
-        //     // Not mousing over anything, make sure there's nothing highlighted.
-        //     if (highlighted != null) {
-        //         highlighted.GetComponent<BaseStructure>().Deselect();
-        //         highlighted = null;
-        //     }
-        // }
+        builderControls.enabled = selected == null;
     }
 
     private enum MouseButton {

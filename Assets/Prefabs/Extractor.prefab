@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -1570451627141259557}
   m_Layer: 7
   m_Name: Extractor
-  m_TagString: Untagged
+  m_TagString: Structure
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,15 +100,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capacity: 10
   storage: 0
+  totalHealth: 100
+  currentHealth: 100
   highlightedColor: {r: 1, g: 1, b: 1, a: 1}
   selectedColor: {r: 0, g: 1, b: 0, a: 1}
   minScale: 1.1
   maxScale: 1.2
   selectedPulseSpeed: 1
-  isBuilt: 1
-  energyToBuild: 10
+  isBuilt: 0
+  totalBuildEnergy: 10
   buildingRate: 1
-  buildingPrefab: {fileID: 4160913851089526687, guid: 75aa3ca488191b74f8570f7c8189b2aa, type: 3}
+  buildMaskTrans: {fileID: 0}
   transferRate: 1
   extractionRate: 1
   energyDepositLayerMask:
