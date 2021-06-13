@@ -12,13 +12,30 @@ public class Controls : MonoBehaviour {
     private LineRenderer lineRenderer;
     private Camera cam;
     private BaseStructure selected, highlighted;
+    private WireDrawer wireDrawer;
 
     private void Awake() {
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         lineRenderer = GetComponent<LineRenderer>();
+        wireDrawer = GetComponent<WireDrawer>();
     }
 
     private void Update() {
+
+        if (selected == null) {
+            List<BaseStructure> connection = wireDrawer.FindMousedOverConnection();
+            if (connection != null) {
+                if (Input.GetMouseButtonDown((int)MouseButton.right)) {
+                    connection[0].DisconnectFrom(connection[1]);
+                }
+                lineRenderer.positionCount = 2;
+                lineRenderer.SetColor(Color.red);
+                lineRenderer.SetPositions(new Vector3[]{connection[0].transform.position + new Vector3(0, 0, 0.02f), connection[1].transform.position + new Vector3(0, 0, 0.02f)});
+            } else {
+                lineRenderer.positionCount = 0;
+            }
+        }
+
         if (Input.GetMouseButtonDown((int)MouseButton.right)) {
             if (selected != null) {
                 selected.Deselect();

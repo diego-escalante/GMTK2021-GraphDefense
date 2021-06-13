@@ -7,6 +7,8 @@ public class WireDrawer : MonoBehaviour {
 
     [SerializeField]
     private Material wireMaterial;
+    [SerializeField]
+    private LayerMask mouseLayer;
 
     private Dictionary<List<BaseStructure>, LineRenderer> connections = new Dictionary<List<BaseStructure>, LineRenderer>();
 
@@ -36,6 +38,18 @@ public class WireDrawer : MonoBehaviour {
 
         Destroy(connections[connection].gameObject);
         connections.Remove(connection);
+    }
+
+    public List<BaseStructure> FindMousedOverConnection() {
+        List<List<BaseStructure>> results = connections.Keys.Where(key => {
+            RaycastHit2D hit = Physics2D.Linecast(key[0].transform.position, key[1].transform.position, mouseLayer);
+            return hit.collider != null;
+        }).ToList();
+
+        if (results.Count == 0) {
+            return null;
+        }
+        return results[0];
     }
 
     private bool AreConnected(BaseStructure a, BaseStructure b) {
