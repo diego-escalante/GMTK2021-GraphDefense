@@ -7,11 +7,19 @@ using System.Linq;
 public class BuilderControls : MonoBehaviour {
 
     [SerializeField]
+    private GameObject turretPrefab;
+    [SerializeField]
     private GameObject extractorPrefab;
+    [SerializeField]
+    private GameObject transferNodePrefab;
     [SerializeField]
     private LayerMask structureMask;
     [SerializeField]
     private Button extractorButton;
+    [SerializeField]
+    private Button turretButton;
+    [SerializeField]
+    private Button transferNodeButton;
     [SerializeField]
     private int maxBuildCapacity = 3;
 
@@ -48,6 +56,18 @@ public class BuilderControls : MonoBehaviour {
         }
     }
 
+    public void BuildTurret() {
+        if (this.enabled) {
+            StartCoroutine(BuildingCoroutine(turretPrefab));
+        }
+    }
+
+    public void BuildTransferNode() {
+        if (this.enabled) {
+            StartCoroutine(BuildingCoroutine(transferNodePrefab));
+        }
+    }
+
     private IEnumerator BuildingCoroutine(GameObject structurePrefab) {
 
         building = true;
@@ -55,6 +75,7 @@ public class BuilderControls : MonoBehaviour {
         SetButtonsEnableState(false);
 
         Transform buildSite = new GameObject("Build Site").transform;
+        buildSite.localScale = structurePrefab.transform.localScale;
         SpriteRenderer prefabRenderer = structurePrefab.GetComponent<SpriteRenderer>();
         SpriteRenderer buildSpriteRenderer = buildSite.gameObject.AddComponent<SpriteRenderer>();
         buildSpriteRenderer.sprite = prefabRenderer.sprite;
@@ -82,6 +103,8 @@ public class BuilderControls : MonoBehaviour {
 
     private void SetButtonsEnableState(bool state) {
         extractorButton.interactable = state;
+        turretButton.interactable = state;
+        transferNodeButton.interactable = state;
     }
 
     private bool AtBuildCapacity() {

@@ -289,6 +289,9 @@ public abstract class BaseStructure : MonoBehaviour {
     }
 
     private void Demolish() {
+        foreach (BaseStructure structure in connectedToStructures.ToArray()) {
+            DisconnectFrom(structure);
+        }
         Destroy(gameObject);
     }
 

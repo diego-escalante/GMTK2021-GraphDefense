@@ -4,11 +4,7 @@
 
 ### Core
 
-* Towers
-    * Consumption rate (energy to attack)
-* Enemies
-    * Spawning
-    * Move to nearest building
-    * Attack building
-* Generate Power Site locations
-* Transfer Nodes
+* Score
+* Start screen
+* End screen
+* Make it more obvious when energy deposits are depleted.

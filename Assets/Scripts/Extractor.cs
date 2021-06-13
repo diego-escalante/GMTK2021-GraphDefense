@@ -38,7 +38,7 @@ public class Extractor : BaseStructure {
 
         // Extract from energy deposits and put in storage.
         float extractionPerDeposit = extractionRate/energyDeposits.Count;
-        foreach (EnergyDeposit energyDeposit in energyDeposits) {
+        foreach (EnergyDeposit energyDeposit in energyDeposits.ToArray()) {
             
             // Determine the amount of energy to extract from the deposit.
             float amountToExtract = extractionPerDeposit * Time.deltaTime;
